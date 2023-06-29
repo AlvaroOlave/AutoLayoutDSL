@@ -8,14 +8,14 @@ import Foundation
 import UIKit
 
 public final class LayoutProxy {
-    lazy var leading = property(with: view.leadingAnchor)
-    lazy var trailing = property(with: view.trailingAnchor)
-    lazy var top = property(with: view.topAnchor)
-    lazy var bottom = property(with: view.bottomAnchor)
-    lazy var centerX = property(with: view.centerXAnchor)
-    lazy var centerY = property(with: view.centerYAnchor)
-    lazy var width = dimension(with: view.widthAnchor)
-    lazy var height = dimension(with: view.heightAnchor)
+    public lazy var leading = property(with: view.leadingAnchor)
+    public lazy var trailing = property(with: view.trailingAnchor)
+    public lazy var top = property(with: view.topAnchor)
+    public lazy var bottom = property(with: view.bottomAnchor)
+    public lazy var centerX = property(with: view.centerXAnchor)
+    public lazy var centerY = property(with: view.centerYAnchor)
+    public lazy var width = dimension(with: view.widthAnchor)
+    public lazy var height = dimension(with: view.heightAnchor)
     
     private let view: UIView
     

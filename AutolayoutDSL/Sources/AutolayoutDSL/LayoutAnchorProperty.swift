@@ -3,7 +3,7 @@
 //
 //  Created by Álvaro Olave Bañeres on 27/6/23.
 //
-
+#if os(iOS)
 import Foundation
 import UIKit
 
@@ -40,3 +40,4 @@ extension LayoutAnchorProperty {
         constraint.isActive = true
     }
 }
+#endif

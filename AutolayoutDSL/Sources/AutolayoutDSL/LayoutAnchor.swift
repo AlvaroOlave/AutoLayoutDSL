@@ -3,7 +3,7 @@
 //
 //  Created by Álvaro Olave Bañeres on 27/6/23.
 //
-
+#if os(iOS)
 import Foundation
 import UIKit
 
@@ -17,3 +17,4 @@ public protocol LayoutAnchor {
 }
 
 extension NSLayoutAnchor: LayoutAnchor {}
+#endif

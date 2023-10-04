@@ -24,13 +24,13 @@ public final class LayoutProxy {
     }
     
     func centerXin(_ view: UIView, padding: CGFloat = 0.0) {
-//        self.leading == view.leadingAnchor + padding
-//        self.trailing == view.trailingAnchor - padding
+        self.leading == view.leadingAnchor + padding
+        self.trailing == view.trailingAnchor - padding
     }
     
     func centerYin(_ view: UIView, padding: CGFloat = 0.0) {
-//        self.top == view.topAnchor + padding
-//        self.bottom == view.bottomAnchor - padding
+        self.top == view.topAnchor + padding
+        self.bottom == view.bottomAnchor - padding
     }
     
     private func property<A: LayoutAnchor>(with anchor: A) -> LayoutAnchorProperty<A> {

@@ -22,7 +22,7 @@ extension UIView {
         }
     }
     
-    func fillSafeArea(_ view: UIView) {
+    public func fillSafeArea(_ view: UIView) {
         self.layout {
             $0.top == view.safeAreaLayoutGuide.topAnchor
             $0.bottom == view.safeAreaLayoutGuide.bottomAnchor
@@ -31,25 +31,25 @@ extension UIView {
         }
     }
     
-    func height(_ value: CGFloat) {
+    public func height(_ value: CGFloat) {
         self.layout {
             $0.height == value
         }
     }
     
-    func width(_ value: CGFloat) {
+    public func width(_ value: CGFloat) {
         self.layout {
             $0.width == value
         }
     }
     
-    func centerXin(_ view: UIView, _ padding: CGFloat = 0.0) {
+    public func centerXin(_ view: UIView, _ padding: CGFloat = 0.0) {
         self.layout {
             $0 -|- (view + padding)
         }
     }
     
-    func centerIn(_ view: UIView) {
+    public func centerIn(_ view: UIView) {
         self.layout {
             $0.centerX == view.centerXAnchor
             $0.centerY == view.centerYAnchor

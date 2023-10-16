@@ -48,6 +48,12 @@ extension UIView {
             $0 -|- (view + padding)
         }
     }
+
+    public func centerYin(_ view: UIView, _ padding: CGFloat = 0.0) {
+        self.layout {
+            $0 |-| (view + padding)
+        }
+    }
     
     public func centerIn(_ view: UIView) {
         self.layout {

@@ -13,31 +13,37 @@ public struct LayoutAnchorProperty<Anchor: LayoutAnchor> {
 }
 
 extension LayoutAnchorProperty {
+    @discardableResult
     func equal(to otherAnchor: Anchor,
                offsetBy constant: CGFloat = 0,
-               priority: UILayoutPriority = .required) {
+               priority: UILayoutPriority = .required) -> NSLayoutConstraint {
         let constraint = anchor.constraint(equalTo: otherAnchor,
                                            constant: constant)
         constraint.priority = priority
         constraint.isActive = true
+        return constraint
     }
     
+    @discardableResult
     func greaterThanOrEqual(to otherAnchor: Anchor,
                             offsetBy constant: CGFloat = 0,
-                            priority: UILayoutPriority = .required) {
+                            priority: UILayoutPriority = .required) -> NSLayoutConstraint {
         let constraint = anchor.constraint(greaterThanOrEqualTo: otherAnchor,
                                            constant: constant)
         constraint.priority = priority
         constraint.isActive = true
+        return constraint
     }
     
+    @discardableResult
     func lessThanOrEqual(to otherAnchor: Anchor,
                          offsetBy constant: CGFloat = 0,
-                         priority: UILayoutPriority = .required) {
+                         priority: UILayoutPriority = .required) -> NSLayoutConstraint {
         let constraint = anchor.constraint(lessThanOrEqualTo: otherAnchor,
                                            constant: constant)
         constraint.priority = priority
         constraint.isActive = true
+        return constraint
     }
 }
 #endif

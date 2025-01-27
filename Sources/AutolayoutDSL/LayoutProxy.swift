@@ -19,6 +19,8 @@ public final class LayoutProxy {
     
     private let view: UIView
     
+    lazy var returnableConstraints: [NSLayoutConstraint] = []
+    
     init(view: UIView) {
         self.view = view
     }
@@ -31,6 +33,10 @@ public final class LayoutProxy {
     func centerYin(_ view: UIView, padding: CGFloat = 0.0) {
         self.top == view.topAnchor + padding
         self.bottom == view.bottomAnchor - padding
+    }
+    
+    func returnable(_ constraint: NSLayoutConstraint) {
+        returnableConstraints.append(constraint)
     }
     
     private func property<A: LayoutAnchor>(with anchor: A) -> LayoutAnchorProperty<A> {

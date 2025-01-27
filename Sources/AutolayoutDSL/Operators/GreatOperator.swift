@@ -7,57 +7,66 @@
 import Foundation
 import UIKit
 
+@discardableResult
 public func >=<A: LayoutAnchor>(lhs: LayoutAnchorProperty<A>,
-                                rhs: A) {
-    lhs.greaterThanOrEqual(to: rhs)
+                                rhs: A) -> NSLayoutConstraint {
+    return lhs.greaterThanOrEqual(to: rhs)
 }
 
+@discardableResult
 public func >=<A: LayoutAnchor>(lhs: LayoutAnchorProperty<A>,
-                                rhs: (A, CGFloat)) {
-    lhs.greaterThanOrEqual(to: rhs.0, offsetBy: rhs.1)
+                                rhs: (A, CGFloat)) -> NSLayoutConstraint {
+    return lhs.greaterThanOrEqual(to: rhs.0, offsetBy: rhs.1)
 }
 
+@discardableResult
 public func >=<A: LayoutAnchor>(lhs: LayoutAnchorProperty<A>,
-                                rhs: (A, UILayoutPriority)) {
-    lhs.greaterThanOrEqual(to: rhs.0, priority: rhs.1)
+                                rhs: (A, UILayoutPriority)) -> NSLayoutConstraint {
+    return lhs.greaterThanOrEqual(to: rhs.0, priority: rhs.1)
 }
 
+@discardableResult
 public func >=<A: LayoutAnchor>(lhs: LayoutAnchorProperty<A>,
-                                rhs: ((A, CGFloat), UILayoutPriority)) {
-    lhs.greaterThanOrEqual(to: rhs.0.0, offsetBy: rhs.0.1, priority: rhs.1)
+                                rhs: ((A, CGFloat), UILayoutPriority)) -> NSLayoutConstraint {
+    return lhs.greaterThanOrEqual(to: rhs.0.0, offsetBy: rhs.0.1, priority: rhs.1)
 }
 
+@discardableResult
 public func >=<A: LayoutDimension>(lhs: LayoutDimensionProperty<A>,
-                                   rhs: (A, UILayoutPriority)) {
-    lhs.greaterThanOrEqual(to: rhs.0, priority: rhs.1)
+                                   rhs: (A, UILayoutPriority)) -> NSLayoutConstraint {
+    return lhs.greaterThanOrEqual(to: rhs.0, priority: rhs.1)
 }
 
+@discardableResult
 public func >=<A: LayoutDimension>(lhs: LayoutDimensionProperty<A>,
-                                   rhs: ((A, DimensionOperation), UILayoutPriority)) {
+                                   rhs: ((A, DimensionOperation), UILayoutPriority)) -> NSLayoutConstraint {
     switch rhs.0.1 {
     case let .multiplier(value):
-        lhs.greaterThanOrEqual(to: rhs.0.0, multiplier: value, priority: rhs.1)
+        return lhs.greaterThanOrEqual(to: rhs.0.0, multiplier: value, priority: rhs.1)
     case let .constant(value):
-        lhs.greaterThanOrEqual(to: rhs.0.0, constant: value, priority: rhs.1)
+        return lhs.greaterThanOrEqual(to: rhs.0.0, constant: value, priority: rhs.1)
     }
 }
 
+@discardableResult
 public func >=<A: LayoutAnchor>(lhs: LayoutDimensionProperty<A>,
-                                rhs: CGFloat) {
-    lhs.greaterThanOrEqual(to: rhs)
+                                rhs: CGFloat) -> NSLayoutConstraint {
+    return lhs.greaterThanOrEqual(to: rhs)
 }
 
+@discardableResult
 public func >=<A: LayoutDimension>(lhs: LayoutDimensionProperty<A>,
-                                   rhs: A) {
-    lhs.greaterThanOrEqual(to: rhs)
+                                   rhs: A) -> NSLayoutConstraint {
+    return lhs.greaterThanOrEqual(to: rhs)
 }
 
+@discardableResult
 public func >=<A: LayoutDimension>(lhs: LayoutDimensionProperty<A>,
-                                   rhs: (A, DimensionOperation)) {
+                                   rhs: (A, DimensionOperation)) -> NSLayoutConstraint {
     switch rhs.1 {
     case let .multiplier(value):
-        lhs.greaterThanOrEqual(to: rhs.0, multiplier: value)
+        return lhs.greaterThanOrEqual(to: rhs.0, multiplier: value)
     case let .constant(value):
-        lhs.greaterThanOrEqual(to: rhs.0, constant: value)
+        return lhs.greaterThanOrEqual(to: rhs.0, constant: value)
     }
 }

@@ -7,10 +7,34 @@
 import Foundation
 import UIKit
 
+public func ==<A: LayoutAnchor>(lhs: A,
+                         rhs: A) -> NSLayoutConstraint {
+    return lhs.constraint(equalTo: rhs, constant: 0.0)
+}
+
 extension UIView {
     public func layout(using closure: (LayoutProxy) -> Void) {
         translatesAutoresizingMaskIntoConstraints = false
         closure(LayoutProxy(view: self))
+    }
+    
+    public func layoutReturning(using closure: (LayoutProxy) -> Void) -> [NSLayoutConstraint] {
+        translatesAutoresizingMaskIntoConstraints = false
+        let proxy = LayoutProxy(view: self)
+        closure(proxy)
+        return proxy.returnableConstraints
+    }
+    
+    func expple() {
+        let view1 = UIView()
+        let view2 = UIView()
+        
+        let contr = view1.layoutReturning {
+            $0.returnable($0.height == 120)
+            $0.returnable($0.top == view2.topAnchor + 12.0 ~ .defaultLow)
+            $0.top == view2.topAnchor + 12.0 ~ .defaultLow
+            $0.height == 12.0
+        }
     }
     
     public func fill(_ view: UIView) {

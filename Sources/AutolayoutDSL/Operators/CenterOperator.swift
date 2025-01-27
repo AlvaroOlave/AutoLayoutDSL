@@ -10,24 +10,24 @@ import UIKit
 /// Operator that centers a view horizontally in other view
 infix operator -|-
 public func -|-<A: LayoutProxy>(lhs: A,
-                         rhs: UIView) {
+                                rhs: UIView) {
     lhs.centerXin(rhs)
 }
 
 /// Operator that centers a view horizontally in other view, applying a padding
 public func -|-<A: LayoutProxy>(lhs: A,
-                         rhs: (UIView, CGFloat)) {
+                                rhs: (UIView, CGFloat)) {
     lhs.centerXin(rhs.0, padding: rhs.1)
 }
 
 /// Operator that centers a view vertically in other view
 infix operator |-|
 public func |-|<A: LayoutProxy>(lhs: A,
-                         rhs: UIView) {
+                                rhs: UIView) {
     lhs.centerYin(rhs)
 }
 /// Operator that centers a view vertically in other view, applying a padding
 public func |-|<A: LayoutProxy>(lhs: A,
-                         rhs: (UIView, CGFloat)) {
+                                rhs: (UIView, CGFloat)) {
     lhs.centerYin(rhs.0, padding: rhs.1)
 }

@@ -25,18 +25,6 @@ extension UIView {
         return proxy.returnableConstraints
     }
     
-    func expple() {
-        let view1 = UIView()
-        let view2 = UIView()
-        
-        let contr = view1.layoutReturning {
-            $0.returnable($0.height == 120)
-            $0.returnable($0.top == view2.topAnchor + 12.0 ~ .defaultLow)
-            $0.top == view2.topAnchor + 12.0 ~ .defaultLow
-            $0.height == 12.0
-        }
-    }
-    
     public func fill(_ view: UIView) {
         self.layout {
             $0.top == view.topAnchor

@@ -35,7 +35,7 @@ public final class LayoutProxy {
         self.bottom == view.bottomAnchor - padding
     }
     
-    func returnable(_ constraint: NSLayoutConstraint) {
+    public func returnable(_ constraint: NSLayoutConstraint) {
         returnableConstraints.append(constraint)
     }
     
